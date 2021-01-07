@@ -1,4 +1,4 @@
-package com.robsoncraftsman.alura.rh.service;
+package com.robsoncraftsman.alura.rh.service.reajuste;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -10,7 +10,7 @@ import com.robsoncraftsman.alura.rh.model.Funcionario;
 public class ValidarPeriodoReajuste implements ValidarReajuste {
 
 	@Override
-	public void validar(Funcionario funcionario, BigDecimal aumento) {
+	public void validar(final Funcionario funcionario, final BigDecimal aumento) {
 		final var dataUltimoReajuste = funcionario.getDataUltimoReajuste();
 		final var dataAtual = LocalDate.now();
 		final var mesesDesdeUltimoReajuste = ChronoUnit.MONTHS.between(dataUltimoReajuste, dataAtual);
